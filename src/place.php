@@ -1,21 +1,36 @@
 <?php
 class Place
 {
-    private $description;
+    private $location;
+    private $photo;
 
-    function __construct($description)
+
+
+    function __construct($location, $photo)
     {
-        $this->description = $description;
+        $this->location = $location;
+        $this->photo = $photo;
     }
 
-    function setDescription ($new_description)
+    function setLocation ($new_location)
     {
-        $this->description = (string) $new_description;
+        $this->location = (string) $new_location;
     }
 
-    function getDescription()
+    function getLocation()
     {
-        return $this->description;
+        return $this->location;
+    }
+
+    function setPhoto ($new_photo)
+    {
+        $this->location = (string) $new_photo;
+
+    }
+
+    function getPhoto()
+    {
+        return $this->photo;
     }
 
     function save()

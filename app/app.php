@@ -21,7 +21,7 @@
     });
 
     $app->post("/places", function() use ($app) {
-        $place = new Place($_POST['description']);
+        $place = new Place($_POST['location'], $_POST['photo']);
         $place->save();
         return $app["twig"]->render('create_place.html.twig', array('newplace' => $place));
     });
@@ -30,7 +30,7 @@
 
         place::deleteAll();
 
-        return $app['twig']->render('delete_places.html.twig');
+        return $app['twig']->render('delete_place.html.twig');
     });
 
     return $app;
